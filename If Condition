@@ -1,0 +1,25 @@
+package week1.day2;
+
+public class IfCondition {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=1;
+		int b=3;
+		if(a==b) {
+			System.out.println("Keyboard");
+		}
+		else if(a>b) {
+			System.out.println("CPU");
+		}
+		
+		else if(a<b) {
+			System.out.println("Mouse");
+		}
+		else { 
+			System.out.println("Motherboard");
+		}
+
+	}
+
+}//output: Mouse
