@@ -1,0 +1,22 @@
+package week1.day1;
+
+public class DataType {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+byte RollNo=2;
+int age=27;
+String Name="Divya";
+long MobileNumber=999899991245L;
+float RateStar=4.5f;
+Double rate=22.3456;
+
+System.out.println("Roll Number : "+RollNo);
+System.out.println("Age : "+age);
+System.out.println("Name : "+Name);
+System.out.println("Mobile Number : "+MobileNumber);
+System.out.println("Rate Star : "+RateStar);
+System.out.println("Rate : "+rate);
+	}
+
+}
