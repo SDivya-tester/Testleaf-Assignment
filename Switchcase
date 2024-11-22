@@ -1,0 +1,39 @@
+package week1.day2;
+
+public class SwitchCase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			String M = "Briyani";
+			
+			switch(M) {
+			
+			case "Parota":
+				System.out.println("Parota");
+				break;
+			case "Briyani":
+				System.out.println("Briyani");
+				break;
+			case "Veg Rice":
+				System.out.println("Veg Rice");
+				break;
+			case "Chappathi":
+				System.out.println("Chappathi");
+				break;
+			case "Idly":
+				System.out.println("Idly");
+				break;
+			case "Maggi":
+				System.out.println("Maggi");
+				break;
+			case "Pasta":
+				System.out.println("Pasta");
+				break;
+			default:
+				System.out.println("Invalid day");
+				
+			}
+
+	}
+
+}
