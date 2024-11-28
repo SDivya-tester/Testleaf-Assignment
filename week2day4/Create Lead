@@ -1,0 +1,44 @@
+package week2.day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class LearnSelectButton {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Launch the browser
+				ChromeDriver driver =new ChromeDriver();
+				//Loading the URL
+				driver.get("http://leaftaps.com/opentaps/control/main");
+				
+		        //Maximize the Browser
+				driver.manage().window().maximize();
+				
+				//Enter the username
+				driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
+				
+				//Enter the password
+				driver.findElement(By.id("password")).sendKeys("crmsfa");
+				
+				//Click the login button
+				driver.findElement(By.className("decorativeSubmit")).click();
+			
+			    //Click the CRMSFA link
+				driver.findElement(By.linkText("CRM/SFA")).click();
+				
+				//Click Leads link
+				driver.findElement(By.linkText("Leads")).click();
+				
+				//Click create lead
+				driver.findElement(By.linkText("Create Lead")).click();
+				
+				//driver.findElement(By.partialLinkText("Create")).click();
+				driver.findElement(By.id("createLeadForm_companyName")).sendKeys("Testleaf");
+				driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Divya");
+				driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Soundararajan");
+				driver.findElement(By.id("createLeadForm_generalProfTitle")).sendKeys("Testleaf Assignment");
+		    driver.findElement(By.name("submitButton")).click();	
+						    }
