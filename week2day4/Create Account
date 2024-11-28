@@ -1,0 +1,59 @@
+package week2.day4;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class CreateAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChromeDriver driver =new ChromeDriver();
+		//Loading the URL
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		
+        //Maximize the Browser
+		driver.manage().window().maximize();
+		
+		//Enter the username
+		driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
+		
+		//Enter the password
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
+		
+		//Click the login button
+		driver.findElement(By.className("decorativeSubmit")).click();
+	
+	    //Click the CRMSFA link
+		driver.findElement(By.linkText("CRM/SFA")).click();
+		
+		driver.findElement(By.linkText("Accounts")).click();
+		driver.findElement(By.linkText("Create Account")).click();
+		driver.findElement(By.id("accountName")).sendKeys("Divya Account");
+		driver.findElement(By.name("description")).sendKeys("\"Selenium Automation Tester.\"");
+		WebElement DropdownIndustry=driver.findElement(By.name("industryEnumId"));
+		Select IndustryList=new Select(DropdownIndustry);
+		IndustryList.selectByVisibleText("Computer Software");
+		
+		WebElement DropdownOwnership=driver.findElement(By.name("ownershipEnumId"));
+		Select Ownership=new Select(DropdownOwnership);
+		Ownership.selectByVisibleText("S-Corporation");
+		
+		WebElement DropdownSource=driver.findElement(By.id("dataSourceId"));
+		Select Source=new Select(DropdownSource);
+		Source.selectByValue("LEAD_EMPLOYEE");
+		
+		WebElement DropdownMarketing=driver.findElement(By.id("marketingCampaignId"));
+		Select Marketing=new Select(DropdownMarketing);
+		Marketing.selectByIndex(7);
+		
+		WebElement DropdownProvince=driver.findElement(By.name("generalStateProvinceGeoId"));
+		Select Province=new Select(DropdownProvince);
+		Province.selectByValue("TX");
+		driver.findElement(By.className("smallSubmit")).click();
+		driver.close();
+	}
+
+}
