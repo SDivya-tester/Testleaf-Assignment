@@ -1,0 +1,33 @@
+package week3.day2;
+
+public class APIClient {
+	
+	public void sendRequest(String endpoint) {
+        System.out.println("Sending request to endpoint: " + endpoint);
+    }
+
+    // Overloaded method: version with three arguments
+    public void sendRequest(String endpoint, String requestBody, boolean requestStatus) {
+        System.out.println("Sending request to endpoint: " + endpoint);
+        System.out.println("Request Body: " + requestBody);
+        System.out.println("Request Status: " + (requestStatus ? "Successful" : "Failed"));
+    }
+	public static void main(String[] args) {
+		
+        APIClient apiClient = new APIClient();
+
+        // Call the single-argument version of sendRequest
+        System.out.println("Calling sendRequest with one argument:");
+        apiClient.sendRequest("https://api.example.com/data");
+
+        // Call the three-argument version of sendRequest
+        System.out.println("\nCalling sendRequest with three arguments:");
+        apiClient.sendRequest(
+            "https://api.example.com/update",
+            "{ \"name\": \"Test\", \"status\": \"active\" }",
+            true
+        );
+    }
+	}
+
+
