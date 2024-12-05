@@ -1,0 +1,33 @@
+package week3.day2;
+
+public class BrowserDemo {
+	
+	public static void main(String[] args) {
+        // Chrome object
+        Chrome chrome = new Chrome("117.0");
+        chrome.openURL("https://www.google.com");
+        chrome.openIncognito();
+        chrome.clearCache();
+        chrome.closeBrowser();
+        chrome.navigateBack();
+
+        System.out.println();
+
+        // Edge object
+        Edge edge = new Edge("115.0");
+        edge.openURL("https://www.microsoft.com");
+        edge.takeSnap();
+        edge.clearCookies();
+      
+        System.out.println();
+
+        // Safari object
+        Safari safari = new Safari("16.0");
+        safari.openURL("https://www.apple.com");
+        safari.readerMode();
+        safari.fullScreenMode();
+        safari.closeBrowser();
+        safari.navigateBack();
+
+}
+}
