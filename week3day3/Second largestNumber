@@ -1,0 +1,23 @@
+package week3.day4;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class SecondLargest {
+
+	public static void main(String[] args) {
+		int array[]= {3, 2, 11, 4, 6, 7}; 
+		List<Integer> list = new ArrayList<>();
+        for (int num : array) {
+            list.add(num);
+        }
+
+        // Sort the list in ascending order
+        Collections.sort(list);
+
+        // Get and print the second largest number
+        int secondLargest = list.get(list.size() - 2);
+        System.out.println("The second largest number is: " + secondLargest);
+    }
+}
