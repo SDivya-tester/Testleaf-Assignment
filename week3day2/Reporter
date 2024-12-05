@@ -1,0 +1,30 @@
+package week3.day2;
+
+public class Reporter {
+	
+	public void reportStep(String msg, String status) {
+		System.out.println("Message: " + msg);
+        System.out.println("Status: " + status);
+    }
+
+    // Overloaded method: version with three arguments
+    public void reportStep(String msg, String status, boolean snap) {
+        System.out.println("Message: " + msg);
+        System.out.println("Status: " + status);
+        System.out.println("Snapshot taken: " + snap);
+    }
+        
+        public static void main(String[] args) {
+            // Create an object of the Reporter class
+            Reporter reporter = new Reporter();
+
+            // Call the two-argument version of reportStep
+            System.out.println("Calling reportStep with two arguments:");
+            reporter.reportStep("Test case passed", "Success");
+
+            // Call the three-argument version of reportStep
+            System.out.println("\nCalling reportStep with three arguments:");
+            reporter.reportStep("Test case failed", "Failure", true);
+	}
+
+}
