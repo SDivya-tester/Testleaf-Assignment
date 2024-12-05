@@ -1,0 +1,25 @@
+package week3.day2;
+
+public class Browser {
+	   String browserName;
+	    String browserVersion;
+
+	    // Constructor to initialize the browser details
+	    public Browser(String browserName, String browserVersion) {
+	        this.browserName = browserName;
+	        this.browserVersion = browserVersion;
+	    }
+	    //Methods
+	    public void openURL(String url) {
+	        System.out.println(browserName + " (Version " + browserVersion + ") is opening the URL: " + url);
+	    }
+
+	    public void closeBrowser() {
+	        System.out.println(browserName + " is closing.");
+	    }
+
+	    public void navigateBack() {
+	        System.out.println(browserName + " is navigating back.");
+	    }
+	}
+
