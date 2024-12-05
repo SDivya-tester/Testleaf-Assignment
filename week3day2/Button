@@ -11,3 +11,65 @@ public class Button extends WebElement {
 	}
 
 }
+package week3.day2;
+
+public class CheckBoxButton extends Button{
+	public void clickCheckButton() {
+		System.out.println("Click check Button");
+	}
+	
+
+}
+
+package week3.day2;
+
+public class RadioButton extends Button {
+	public void selectRadioButton() {
+		System.out.println("Select Radio button");
+	}
+
+}
+
+
+package week3.day2;
+
+public class Textfield  extends WebElement{
+
+	public void getText() {
+		System.out.println("getText");
+	}
+}
+
+
+package week3.day2;
+
+public class Element extends Button {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Element Ele=new Element();
+Ele.click();
+Ele.Submit();
+
+RadioButton RB=new RadioButton();
+RB.selectRadioButton();
+RB.click();
+RB.Submit();
+
+CheckBoxButton Cbb= new CheckBoxButton();
+Cbb.clickCheckButton();
+Cbb.click();
+Cbb.Submit();
+Cbb.setText("Text");
+
+Textfield Tf=new Textfield();
+
+Tf.click();
+Tf.getText();
+
+
+
+
+	}
+
+}
