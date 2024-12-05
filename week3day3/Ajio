@@ -1,0 +1,68 @@
+package week3.day3;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chromium.ChromiumDriver;
+
+public class Ajio {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		try {
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.ajio.com/");
+		driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		WebElement Searchbox= driver.findElement(By.name("searchVal"));
+		Searchbox.sendKeys("Bags");
+		Searchbox.submit();
+		
+		
+		WebElement Men=driver.findElement(By.xpath("//label[contains(text(),'Men')]"));
+		Men.click();
+		
+		WebElement fashionBagsFilter = driver.findElement(By.xpath("//label[contains(text(),'Fashion Bags')]"));
+        fashionBagsFilter.click();
+		Thread.sleep(5000);
+		
+		 List<WebElement> items = driver.findElements(By.className("item"));
+         System.out.println("Total items found: " + items.size());
+		
+         List<WebElement> brands = driver.findElements(By.className("brand"));
+         List<String> brandNames = new ArrayList<>();
+         for (WebElement brand : brands) {
+             brandNames.add(brand.getText());
+         }
+         System.out.println("Brands:");
+         for (String brand : brandNames) {
+             System.out.println(brand);
+         }
+
+         // Get the list of bag names
+         List<WebElement> names = driver.findElements(By.className("nameCls"));
+         List<String> bagNames = new ArrayList<>();
+         for (WebElement name : names) {
+             bagNames.add(name.getText());
+         }
+         System.out.println("Bag Names:");
+         for (String bagName : bagNames) {
+             System.out.println(bagName);
+         }
+     } catch (Exception e) {
+         e.printStackTrace();
+     } finally {
+        
+		// Close the browser
+         
+     }
+ }
+}
+			
+
+
