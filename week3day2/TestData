@@ -1,11 +1,42 @@
 package week3.day2;
 
+public class TestData {
+public void enterCredential() {
+	System.out.println("Enter Credential");
+}
+
+public void navigateHomePage() {
+	System.out.println("Navigate Home Page");
+}
+}
+
+package week3.day2;
+
 public class LoginTestData extends TestData {
 	public void enterUsername() {
 		System.out.println("Username");
 	}
 	public void enterPassword() {
 		System.out.println("Password");
+	}
+
+}
+
+public class TestDemo {
+
+	public static void main(String[] args) {
+		System.out.println("Using superclass TestData:");
+        TestData testData = new TestData();
+        testData.enterCredential();
+        testData.navigateHomePage();
+
+        // Create an object of the subclass LoginTestData
+        System.out.println("\nUsing subclass LoginTestData:");
+        LoginTestData loginTestData = new LoginTestData();
+        loginTestData.enterCredential(); // Inherited from TestData
+        loginTestData.navigateHomePage(); // Inherited from TestData
+        loginTestData.enterUsername(); // Defined in LoginTestData
+        loginTestData.enterPassword(); // Defined in LoginTestData
 	}
 
 }
