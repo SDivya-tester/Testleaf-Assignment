@@ -1,0 +1,63 @@
+package week3.day3;
+
+public interface Payment {
+	public void cashOnDelivery();
+	public void  upiPayments();
+	public void cardPayments();
+    public void internetBanking();
+	
+	
+
+}
+package week3.day3;
+
+public abstract class CanaraBank implements Payment {
+	
+	  public abstract void recordPaymentDetails();
+
+}
+package week3.day3;
+
+public  class Amazon extends CanaraBank{
+	
+	public static void main(String[] args) {
+		Amazon AA=new Amazon();
+		AA. cashOnDelivery();
+	AA.  upiPayments();
+	AA. cardPayments();
+	    AA. internetBanking();
+	}
+	@Override
+    public void cashOnDelivery() {
+        System.out.println("Processing Cash on Delivery payment...");
+        
+    }
+
+    @Override
+    public void upiPayments() {
+        System.out.println("Processing UPI Payment...");
+       
+    }
+
+    @Override
+    public void cardPayments() {
+        System.out.println("Processing Card Payment...");
+        
+    }
+
+	@Override
+	public void internetBanking() {
+		// TODO Auto-generated method stub
+		System.out.println("Processing internet Banking...");
+	}
+	@Override
+	public void recordPaymentDetails() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+		
+	}
+
+
