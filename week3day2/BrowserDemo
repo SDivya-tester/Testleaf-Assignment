@@ -1,5 +1,64 @@
 package week3.day2;
 
+
+package week3.day2;
+
+public class Chrome extends Browser {
+	    public Chrome(String browserVersion) {
+	        super("Chrome", browserVersion);
+	    }
+
+	    public void openIncognito() {
+	        System.out.println("Opening incognito mode in Chrome.");
+	    }
+
+	    public void clearCache() {
+	        System.out.println("Clearing Chrome's cache.");
+	    }
+	}
+
+package week3.day2;
+
+public class Edge {
+
+	public Edge(String browserVersion) {
+       // super("Edge", browserVersion);
+    }
+
+    public void takeSnap() {
+        System.out.println("Taking a snapshot in Edge.");
+    }
+
+    public void clearCookies() {
+        System.out.println("Clearing cookies in Edge.");
+    }
+
+	public void openURL(String string) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("OpenURL in Edge.");
+		
+	}
+}
+package week3.day2;
+
+public class Safari extends Browser {
+    public Safari(String browserVersion) {
+        super("Safari", browserVersion);
+    }
+
+    public void readerMode() {
+        System.out.println("Enabling Reader Mode in Safari.");
+    }
+
+    public void fullScreenMode() {
+        System.out.println("Entering Full-Screen Mode in Safari.");
+    }
+
+}
+
+
+
 public class BrowserDemo {
 	
 	public static void main(String[] args) {
