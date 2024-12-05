@@ -1,0 +1,49 @@
+package week3.day3;
+
+
+
+	public interface DatabaseConnection {
+	    void connect();
+	    void disconnect();
+	    void executeUpdate(String query);
+	}
+		
+
+	
+package week3.day3;
+
+public class JavaConnection implements DatabaseConnection{
+
+
+
+	@Override
+	public void connect() {
+		// TODO Auto-generated method stub
+
+        System.out.println("Connecting to the database...");
+	}
+
+	@Override
+	public void disconnect() {
+		// TODO Auto-generated method stub
+
+        System.out.println("disConnect from the database...");
+	}
+
+	@Override
+	public void executeUpdate(String query) {
+		// TODO Auto-generated method stub
+
+        System.out.println(" executeUpdate database..."+query);
+	}
+	public static void main(String[] args) {
+		
+	
+	DatabaseConnection dbConnection = new JavaConnection();
+
+    // Use the implemented methods
+    dbConnection.connect();
+    dbConnection.executeUpdate("UPDATE users SET name = 'Divya' WHERE id = 1");
+    dbConnection.disconnect();
+}
+}
