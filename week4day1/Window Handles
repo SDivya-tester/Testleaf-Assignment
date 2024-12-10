@@ -1,0 +1,67 @@
+package week4.day1;
+
+import java.time.Duration;
+import java.util.Set;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandle {
+
+	public static void main(String[] args) {
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		driver.manage().window().maximize();
+         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		  driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
+		  driver.findElement(By.id("password")).sendKeys("crmsfa");
+		  driver.findElement(By.className("decorativeSubmit")).click();
+		  System.out.println("Login successfully");
+		  driver.findElement(By.linkText("CRM/SFA")).click();
+		  driver.findElement(By.xpath("//a[text()='Contacts']")).click();
+		  driver.findElement(By.xpath("//a[text()='Merge Contacts']")).click();
+		  
+		  //first contact
+		  driver.findElement(By.xpath("(//img[@alt='Lookup'])[1]")).click();
+		  
+		  // Switch to the new window for "From Contact"
+          String parentWindow = driver.getWindowHandle();
+          Set<String> allWindows = driver.getWindowHandles();
+          for (String window : allWindows) {
+              if (!window.equals(parentWindow)) {
+                  driver.switchTo().window(window);
+                  break;
+              }
+          }
+          driver.findElement(By.xpath("//a[contains(@class, 'linktext')]")).click();
+		  driver.switchTo().window(parentWindow);
+		  
+		  
+		  //Second contact 
+		  System.out.println("check1");
+driver.findElement(By.xpath("(//img[@alt='Lookup'])[2]")).click();
+		  System.out.println("check2");
+		  // Switch to the new window for "From Contact"
+          String parentWindow1 = driver.getWindowHandle();
+          Set<String> allWindows1 = driver.getWindowHandles();
+          for (String window : allWindows1) {
+              if (!window.equals(parentWindow1)) {
+                  driver.switchTo().window(window);
+                  break;
+              }
+          }
+          System.out.println("contact To1");
+          driver.findElement(By.linkText("DemoCustomer")).click();
+          System.out.println("To2");
+		  driver.switchTo().window(parentWindow1);
+		  driver.findElement(By.xpath("//a[@class='buttonDangerous']")).click();
+		  Alert confirmation=driver.switchTo().alert();
+		  confirmation.accept();
+		  String title=driver.getTitle();
+		  System.out.println("Title  : "+title);
+		  
+		 
+	}
+
+}
